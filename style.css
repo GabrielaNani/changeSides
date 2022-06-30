@@ -1,0 +1,23 @@
+.sections{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.right{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+img{
+    width: 300px;
+    height: 200px;
+
+}
+.text {
+    width: 400px;
+}
+.left{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+}
