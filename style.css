@@ -1,13 +1,9 @@
 .sections{
     display: flex;
     justify-content: space-evenly;
+    text-align: center;
 }
 
-.right{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-}
 img{
     width: 300px;
     height: 200px;
@@ -16,8 +12,22 @@ img{
 .text {
     width: 400px;
 }
+
 .left{
     display: flex;
     justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.right{
+    display: flex;
+    justify-content: space-evenly;
     flex-direction: row-reverse;
+}
+
+.horizontal{
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-direction: column-reverse;
+    align-items: center;
 }

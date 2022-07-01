@@ -1,26 +1,33 @@
 const select = document.querySelector("select");
-const option = document.createElement("option");
-const option2 = document.createElement("option");
+const left = document.createElement("option");
+const right = document.createElement("option");
+const horizontal = document.createElement("option");
 const sections = document.querySelectorAll(".sections");
 
-option.textContent = "left"
-option2.textContent = "right"
+left.textContent = "left";
+right.textContent = "right";
+horizontal.textContent = "horizontal";
 
-select.append(option);
-select.append(option2);
+select.append(left);
+select.append(right);
+select.append(horizontal);
 
 select.addEventListener("change", ()=>{
     sections.forEach(item =>{
         if(select.value === "left"){
-            console.log("left")
-            item.classList.toggle("right")
-            item.classList.toggle("left")
+            item.classList.remove("right");
+            item.classList.add("left");
+            item.classList.remove("horizontal");
         }
         if(select.value === "right"){
-            console.log("right")
-            item.classList.toggle("right")
-            item.classList.toggle("left")
+            item.classList.add("right");
+            item.classList.remove("left");
+            item.classList.remove("horizontal");
+        }
+        if(select.value === "horizontal"){
+            item.classList.remove("left");
+            item.classList.remove("right");
+            item.classList.add("horizontal");
         }
     })
 })
-
