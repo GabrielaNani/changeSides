@@ -8,26 +8,19 @@ left.textContent = "left";
 right.textContent = "right";
 horizontal.textContent = "horizontal";
 
-select.append(left);
-select.append(right);
-select.append(horizontal);
+select.append(left, right, horizontal);
+
+const condition = (select, item, option, option2, option3) => {
+    if(select.value === option){
+        item.classList.add(option);
+        item.classList.remove(option2, option3);
+    }
+}
 
 select.addEventListener("change", ()=>{
     sections.forEach(item =>{
-        if(select.value === "left"){
-            item.classList.remove("right");
-            item.classList.add("left");
-            item.classList.remove("horizontal");
-        }
-        if(select.value === "right"){
-            item.classList.add("right");
-            item.classList.remove("left");
-            item.classList.remove("horizontal");
-        }
-        if(select.value === "horizontal"){
-            item.classList.remove("left");
-            item.classList.remove("right");
-            item.classList.add("horizontal");
-        }
-    })
-})
+        condition(select, item, "right", "left", "horizontal");
+        condition(select, item, "left", "right", "horizontal");
+        condition(select, item, "horizontal", "left", "right");
+    });
+});
